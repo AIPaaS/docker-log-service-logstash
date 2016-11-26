@@ -13,6 +13,9 @@ RUN curl -LO https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-5.0.
   yum clean all && \
   rm -f /var/log/yum.log
 
+# Plugins install
+/usr/share/logstash/bin/logstash-plugin install logstash-input-beats
+
 # Copy configuration file  
 COPY filebeat.yml /etc/filebeat/
 
